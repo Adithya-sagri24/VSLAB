@@ -1,0 +1,25 @@
+import matplotlib.pyplot as plt
+
+# Bresenham's Line points
+line_points = [(2,2),(3,2),(4,3),(5,3),(6,4),(7,4),(8,5),(9,5),(10,6)]
+
+# Midpoint Circle points (r=5)
+circle_points = [
+ (0,5),(1,5),(2,5),(3,4),(4,3),(5,2),(5,1),(5,0),
+ (4,-3),(3,-4),(2,-5),(1,-5),(0,-5),(-1,-5),(-2,-5),(-3,-4),(-4,-3),(-5,-2),(-5,-1),(-5,0),
+ (-4,3),(-3,4),(-2,5),(-1,5)
+]
+
+# Separate x and y for plotting
+lx, ly = zip(*line_points)
+cx, cy = zip(*circle_points)
+
+plt.figure(figsize=(6,6))
+plt.scatter(lx, ly, color='red', label='Line Points')
+plt.scatter(cx, cy, color='blue', label='Circle Points')
+
+plt.axhline(0, color='black')
+plt.axvline(0, color='black')
+plt.grid(True)
+plt.legend()
+plt.show()
